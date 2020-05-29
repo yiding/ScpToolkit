@@ -5,10 +5,7 @@ using System.Net.NetworkInformation;
 using System.Threading;
 using System.Threading.Tasks;
 using HidSharp;
-using ScpControl.Profiler;
-using ScpControl.ScpCore;
 using ScpControl.Shared.Core;
-using ScpControl.Sound;
 using ScpControl.Utilities;
 
 namespace ScpControl.Usb.Gamepads {
@@ -147,10 +144,6 @@ namespace ScpControl.Usb.Gamepads {
       PacketCounter = 0;
 
       Task.Factory.StartNew(MainHidInputReader, _cancellationTokenSource.Token);
-
-      // connection sound
-      if (GlobalConfiguration.Instance.IsUsbConnectSoundEnabled)
-        AudioPlayer.Instance.PlayCustomFile(GlobalConfiguration.Instance.UsbConnectSoundFile);
 
       return State == DsState.Connected;
     }

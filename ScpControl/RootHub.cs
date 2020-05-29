@@ -17,7 +17,6 @@ using ScpControl.Properties;
 using ScpControl.Rx;
 using ScpControl.ScpCore;
 using ScpControl.Shared.Core;
-using ScpControl.Sound;
 using ScpControl.Usb;
 using ScpControl.Usb.Ds3;
 using ScpControl.Usb.Ds4;
@@ -332,10 +331,6 @@ namespace ScpControl {
       m_Started |= _bthHub.Start();
 
       Log.Debug("Root hub started");
-
-      // make some noise =)
-      if (GlobalConfiguration.Instance.IsStartupSoundEnabled)
-        AudioPlayer.Instance.PlayCustomFile(GlobalConfiguration.Instance.StartupSoundFile);
 
       return m_Started;
     }

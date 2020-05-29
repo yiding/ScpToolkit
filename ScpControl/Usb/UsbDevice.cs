@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using HidSharp.ReportDescriptors.Parser;
 using ScpControl.ScpCore;
 using ScpControl.Shared.Core;
-using ScpControl.Sound;
 using ScpControl.Utilities;
 
 namespace ScpControl.Usb {
@@ -164,10 +163,6 @@ namespace ScpControl.Usb {
       Rumble(0, 0);
       Log.DebugFormat("-- Started Device Instance [{0}] Local [{1}] Remote [{2}]", m_Instance,
           DeviceAddress.AsFriendlyName(), HostAddress.AsFriendlyName());
-
-      // connection sound
-      if (GlobalConfiguration.Instance.IsUsbConnectSoundEnabled)
-        AudioPlayer.Instance.PlayCustomFile(GlobalConfiguration.Instance.UsbConnectSoundFile);
 
       #region Request HID Report Descriptor
 

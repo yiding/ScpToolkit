@@ -149,7 +149,6 @@
     <Compile Include="Rx\IChannel.cs" />
     <Compile Include="Rx\ScpNativeFeedChannel.cs" />
     <Compile Include="ScpCore\SingletonBase.cs" />
-    <Compile Include="Sound\AudioPlayer.cs" />
     <Compile Include="Usb\Gamepads\UsbBadBigBenGamepad.cs" />
     <Compile Include="Usb\Gamepads\UsbGenericGamepad.cs" />
     <Compile Include="Usb\Ds3\Replica\UsbDs3Afterglow.cs" />
@@ -244,24 +243,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="FodyWeavers.xml" />
-    <Content Include="irrKlang\amd64\ikpFlac.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="irrKlang\amd64\ikpMP3.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="irrKlang\amd64\irrKlang.NET4.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="irrKlang\x86\ikpFlac.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="irrKlang\x86\ikpMP3.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="irrKlang\x86\irrKlang.NET4.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Libarius.XML" />
     <Content Include="libwdi\amd64\libwdi.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -270,15 +251,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="LilyPad\LilyPad-Scp-r5875.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\connect.wav">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\disconnect.flac">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\startup.ogg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="libwdi\amd64\wdi-simple.exe">

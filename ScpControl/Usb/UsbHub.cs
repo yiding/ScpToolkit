@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Linq;
 using ScpControl.ScpCore;
 using ScpControl.Shared.Core;
-using ScpControl.Sound;
 using ScpControl.Usb.Ds3;
 using ScpControl.Usb.Ds4;
 using ScpControl.Usb.Gamepads;
@@ -227,11 +226,6 @@ namespace ScpControl.Usb {
         case ScpDevice.Notified.Removal: {
             foreach (var t in _devices.Where(t => t.State == DsState.Connected && path == t.Path)) {
               Log.InfoFormat("Device with MAC address {0} unplugged from Usb", t.DeviceAddress.AsFriendlyName());
-
-              // play disconnect sound
-              if (GlobalConfiguration.Instance.IsUsbDisconnectSoundEnabled)
-                AudioPlayer.Instance.PlayCustomFile(GlobalConfiguration.Instance.UsbDisconnectSoundFile);
-
               t.Stop();
             }
           }

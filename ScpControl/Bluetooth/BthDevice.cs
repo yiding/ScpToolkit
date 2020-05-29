@@ -5,7 +5,6 @@ using System.Reactive.Linq;
 using System.Threading.Tasks;
 using ScpControl.ScpCore;
 using ScpControl.Shared.Core;
-using ScpControl.Sound;
 using ScpControl.Utilities;
 
 namespace ScpControl.Bluetooth {
@@ -76,11 +75,6 @@ namespace ScpControl.Bluetooth {
 
     public virtual bool Start() {
       _outputReportTask = _outputReportSchedule.Subscribe(tick => OnTimer());
-
-      // play connection sound
-      if (GlobalConfiguration.Instance.IsBluetoothConnectSoundEnabled)
-        AudioPlayer.Instance.PlayCustomFile(GlobalConfiguration.Instance.BluetoothConnectSoundFile);
-
       return State == DsState.Connected;
     }
 
@@ -108,10 +102,6 @@ namespace ScpControl.Bluetooth {
 
         m_Publish = false;
         OnHidReportReceived(NewHidReport());
-
-        // play disconnect sound
-        if (GlobalConfiguration.Instance.IsBluetoothDisconnectSoundEnabled)
-          AudioPlayer.Instance.PlayCustomFile(GlobalConfiguration.Instance.BluetoothDisconnectSoundFile);
       }
     }
 
